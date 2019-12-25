@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo App Using JavaScript Fetch Function</title>
+</head>
+<body>
+
+    <h1>Your Favorite Photos</h1>
+
+    <div id="container">
+        <img src="" id="pictures" width="" alt="" >
+    </div>
+    
+
+    <script>
+
+        createApp()
+        .then(response =>{
+            console.log('Yay!!!');
+        }).catch(error => {
+            // console.log(error);
+            console.log('Oops!');
+        })
+
+       async  function createApp(){
+
+            console.log("We're in!!!");
+       
+            // const photos = [
+            //     'IMG-1078.jpg', 'IMG-1079.jpg', 'IMG-1080.jpg', 'IMG-1093.jpg',
+            //     'IMG-1094.jpg', 'IMG-1095.jpg'
+            // ];
+
+            // console.log(photos);
+
+            const response = await fetch('IMG_1078.jpg');
+            const blob = await response.blob();
+            document.getElementById('pictures').src = URL.createObjectURL(blob);
+
+        }
+
+        document.addEventListener('DOMContentLoad',createApp());
+        
+    </script>
+</body>
+</html>
