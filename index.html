@@ -20,23 +20,16 @@
         createApp()
         .then(response =>{
             console.log('Yay!!!');
-        }).catch(error => {
+        })
+        .catch(error => {
             // console.log(error);
             console.log('Oops!');
-        })
+        });
 
        async  function createApp(){
 
             console.log("We're in!!!");
-       
-            // const photos = [
-            //     'IMG-1078.jpg', 'IMG-1079.jpg', 'IMG-1080.jpg', 'IMG-1093.jpg',
-            //     'IMG-1094.jpg', 'IMG-1095.jpg'
-            // ];
-
-            // console.log(photos);
-
-            const response = await fetch('IMG_1078.jpg');
+            const response = await fetch('photos\IMG_1078.jpg');
             const blob = await response.blob();
             document.getElementById('pictures').src = URL.createObjectURL(blob);
 
