@@ -17,23 +17,23 @@
 
     <script>
 
-        createApp()
-        .then(response =>{
-            console.log('Yay!!!');
-        })
-        .catch(error => {
-            // console.log(error);
-            console.log('Oops!');
-        });
+    //     createApp()
+    //     .then(response =>{
+    //         console.log('Yay!!!');
+    //     })
+    //     .catch(error => {
+    //         // console.log(error);
+    //         console.log('Oops!');
+    //     });
 
-       async  function createApp(){
+    //    async  function createApp(){
 
-            console.log("We're in!!!");
-            const response = await fetch('pishur.JPG');
-            const blob = await response.blob();
-            document.getElementById('pictures').src = URL.createObjectURL(blob);
+    //         console.log("We're in!!!");
+    //         const response = await fetch('pishur.JPG');
+    //         const blob = await response.blob();
+    //         document.getElementById('pictures').src = URL.createObjectURL(blob);
 
-        }
+    //     }
 
         // document.addEventListener('DOMContentLoad',createApp());
         
