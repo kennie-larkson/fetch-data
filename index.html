@@ -29,13 +29,13 @@
        async  function createApp(){
 
             console.log("We're in!!!");
-            const response = await fetch('photos\IMG_1078.jpg');
+            const response = await fetch('pishur.JPG');
             const blob = await response.blob();
             document.getElementById('pictures').src = URL.createObjectURL(blob);
 
         }
 
-        document.addEventListener('DOMContentLoad',createApp());
+        // document.addEventListener('DOMContentLoad',createApp());
         
     </script>
 </body>
