@@ -1,14 +1,13 @@
 const http = require('http');
 const ip = '127.0.0.1';
-const port = 5000;
+const port = 4000;
 
-const server = http.createServer((req, res)=>{
-    res.statusCode = 200;
-    res.setHeader('Content-type','text/html');
-    res.end(`${res.statusCode}`);
-    res.end(`We're live on ${port} : ${ip} !`);
-    // console.log(`We're live on ${port} : ${ip} !`);
-    
+const server = http.createServer((request, response)=>{
+    console.log('request starting...');
+
+    //response
+    response.write('Hello Client');
+    response.end();
 });
 
 server.listen(port, ip,()=>{
