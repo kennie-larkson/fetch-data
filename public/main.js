@@ -1,4 +1,4 @@
 
 window.onload = ()=>{
-    document.body.innerHTML += '<strong>Talk JavScript with me!</strong>';
+    document.body.innerHTML += '<strong>Talk JavaScript with me!</strong>';
 }

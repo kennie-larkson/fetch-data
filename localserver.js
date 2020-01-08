@@ -13,7 +13,7 @@ const send404 = (response)=>{
 const mimeLookUp = {
     '.js': 'application/javascript',
     '.html': 'text/html'
-}
+};
 
 
 
@@ -21,14 +21,15 @@ const server = http.createServer((req, res)=>{
     if(req.method == 'GET'){
 
         //resolve filepath to file system path
-        const fileUrl;
+        var fileurl;
         if(req.url == '/'){
-            fileUrl = '/index.html';
-            ;
-        }else{  fileUrl = req.url; const filepath = path.resolve('./public'+fileUrl); } 
+            fileurl = '/index.html';
+            
+        }else{  fileurl = req.url;}
+            var filepath = path.resolve('./public'+fileurl); 
         //look up mime type
-        const fileExt = path.extname(filepath);
-        const mimeType = mimeLookUp[fileExt];
+        var fileExt = path.extname(filepath);
+        var mimeType = mimeLookUp[fileExt];
 
         if(!mimeType){
             send404(res);
@@ -45,7 +46,7 @@ const server = http.createServer((req, res)=>{
             res.writeHead(200,{'Content-type': mimeType});
             fs.createReadStream(filepath).pipe(res);
 
-        })
+        });
         
     }else{
         send404(res);
